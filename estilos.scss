@@ -1,14 +1,4 @@
 
-div {
-    border: 1px solid rgb(0, 255, 0);
-}
-.PJ1 {
-    background-color: rgba(255, 0, 0, 0.5);
-}
-.PJ2 {
-    background-color: rgba(0, 0, 255, 0.5);
-}
-
 
 *, ::before, ::after{
     font-family: sans-serif;
@@ -19,15 +9,17 @@ div {
 
 
 .cuerpo {
-    position: relative;
+    //position: relative;
 }
 
-.contain {
+.container {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     height: 30rem;
+
+    background-color: rgb(216, 235, 240);
 }
 
 
@@ -42,6 +34,9 @@ div {
     flex-direction: row;
     justify-content: space-around;
 
+    margin: 2rem 0;
+
+    /* color para distinguir caja */
     border: 1px solid rgb(255, 0, 255);
 }
 
@@ -55,10 +50,13 @@ div {
     display: flex;
     flex-direction: row;
     justify-content: center;
+
+    /* color para distinguir caja */
+    border: 1px solid rgb(0, 255, 0);
 }
 
 #btnPlayNew {
-    size: 20rem;
+    width: 10rem;
 }
 
 .PJ1, .PJ2 {
@@ -67,4 +65,13 @@ div {
     align-items: center;
 }
 
+.btn-won-point {
+    display: hidden;
+}
+
+
+/* Colores para distinguir las cajas */
+div {
+    background-color: rgba(255, 0, 0, 0.05);
+}
 

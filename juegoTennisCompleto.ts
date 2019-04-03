@@ -169,12 +169,20 @@ class Jugador {
  */
 
  
-console.log("Comienza el partido:");
+//console.log("Comienza el partido:");
 
 let /*nom1:string = prompt("Jugador 1: "),
     nom2:string = prompt("Jugador 2: "),*/
     nombre1:string = "Jugador1",
     nombre2:string = "Jugador2";
+
+function iniciar() {
+
+}
+
+
+
+
 /*
 if (nom1 != "") { 
     nombre1 = nom1; 
@@ -203,14 +211,14 @@ console.log(juego1.getScore());
 juego1.wonPoint(juego1.j1);
 console.log(juego1.getScore());
 
-
+/*
 console.log("Puntuación J1: " + juego1.j1.getPuntuacion());
 console.log("Puntuación J2: " + juego1.j2.getPuntuacion());
 console.log("Resultado: " + juego1.getScore());
 console.log("Ganador: " + juego1.ganador.getNombre());
+*/
 
-
-
+/* Version: Introduce quién marca hasta que uno gane. */
 /*
 let nom1:string = prompt("Jugador 1: "),
     nom2:string = prompt("Jugador 2: "),
