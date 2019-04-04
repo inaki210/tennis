@@ -7,28 +7,26 @@
 	<script src="juegoTennisCompleto.js" type="text/javascript" charset="utf-8"></script>
     <!-- <script src="./app/main.js" type="text/javascript" charset="utf-8"></script> -->
 </head>
-<body id="cuerpo">
-    <div id="container" class="position-relative display-flex-column justify-content-center height-large color-fondo--azul-claro">
-        <div id="divHeader" class="display-flex-row--centrado">
+<body id="cuerpo" class="position-relative display-flex-row justify-content-center color-fondo--azul-claro">
+    <div id="container" class="position-absolute display-flex-column justify-content-center align-items-center margin-top-10-percent">
+        <div id="divHeader" class="display-flex-row justify-content-center">
             <h1>TENNIS GAME</h1>
         </div>
-        <div id="divMain">
-            <div id="divJugadores" class="display-flex-row justify-content-space-around margin-horizontal-small">
-                <div id="divPlayer1" class="display-flex-column--centrado">
-                    <h4 id="lblPlayer1">Player 1</h4>
-                    <input type="text" id="txtPlayer1" size="8" />
-                    <input type="button" id="btnPlayer1" class="display-none" value="Won point" onclick="anotarPunto(1)" />
-                </div>
-                <div id="divResultados" class="display-flex-column--centrado">
-                </div>
-                <div id="divPlayer2">
-                    <h4 id="lblPlayer2">Player 2</h4>
-                    <input type="text" id="txtPlayer2" size="8" />
-                    <input type="button" id="btnPlayer2" class="display-none" value="Won point" onclick="anotarPunto(2)" />
-                </div>
+        <div id="divJugadores" class="display-flex-row justify-content-space-around margin-vertical-small">
+            <div id="divPlayer1" class="margin-horizontal-small display-flex-column align-items-center">
+                <h4 id="lblPlayer1">Player 1</h4>
+                <input type="text" id="txtPlayer1" size="8" />
+                <input type="button" id="btnPlayer1" class="display-none" value="Won point" onclick="anotarPunto(1)" />
+            </div>
+            <div id="divResultados" class="display-flex-column align-items-center">
+            </div>
+            <div id="divPlayer2" class="margin-horizontal-small display-flex-column align-items-center">
+                <h4 id="lblPlayer2">Player 2</h4>
+                <input type="text" id="txtPlayer2" size="8" />
+                <input type="button" id="btnPlayer2" class="display-none" value="Won point" onclick="anotarPunto(2)" />
             </div>
         </div>
-        <div id="divFooter" class="display-flex-row--centrado">
+        <div id="divFooter" class="display-flex-row justify-content-center">
             <input type="button" id="btnPlay" class="width-medium" value="Play!" onclick="iniciar('jugar')" />
             <input type="button" id="btnNew" class="display-none" value="New Game" onclick="iniciar('nuevo')" />
         </div>
