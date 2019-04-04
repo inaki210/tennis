@@ -42,13 +42,11 @@ class Juego {
                 return "Ventaja " + this.j2.getNombre();
             }
             else {
-                if (punt1 == 40 && punt2 == 40) {
-                    return "Deuce";
-                }
-                else {
+                if (punt1 == 50 && punt2 == 50) {
                     this.j1.setPuntuacion(40);
                     this.j2.setPuntuacion(40);
                 }
+                return "Deuce";
             }
         }
         else if (punt1 == 50) {
@@ -78,6 +76,8 @@ class Juego {
                 punt = "forty";
                 break;
             default:
+                punt1 = 40;
+                punt = "forty";
                 break;
         }
 
@@ -107,6 +107,7 @@ class Juego {
         return punt;
     }
 }
+
 
 
 
@@ -161,6 +162,8 @@ class Jugador {
 }
 
 
+
+
 /* 
  * Aplicación de Tennis
  * Crea la app Juego que creará los dos jugadores.
@@ -170,79 +173,112 @@ class Jugador {
 
  
 //console.log("Comienza el partido:");
+// variables de elementos y estado
+let juego1:Juego = new Juego(null, null),
+    resultadoCadena:string;
 
-let /*nom1:string = prompt("Jugador 1: "),
-    nom2:string = prompt("Jugador 2: "),*/
-    nombre1:string = "Jugador1",
-    nombre2:string = "Jugador2";
-
-function iniciar() {
-
-}
-
-
-
-
-/*
-if (nom1 != "") { 
-    nombre1 = nom1; 
-}
-if (nom2 != "") { 
-    nombre2 = nom2; 
-}
-*/
-let juego1:Juego = new Juego(nombre1, nombre2);
-
-console.log(juego1.getScore());
-juego1.wonPoint(juego1.j1);
-console.log(juego1.getScore());
-juego1.wonPoint(juego1.j2);
-console.log(juego1.getScore());
-juego1.wonPoint(juego1.j1);
-console.log(juego1.getScore());
-juego1.wonPoint(juego1.j1);
-console.log(juego1.getScore());
-juego1.wonPoint(juego1.j2);
-console.log(juego1.getScore());
-juego1.wonPoint(juego1.j2);
-console.log(juego1.getScore());
-juego1.wonPoint(juego1.j1);
-console.log(juego1.getScore());
-juego1.wonPoint(juego1.j1);
-console.log(juego1.getScore());
-
-/*
-console.log("Puntuación J1: " + juego1.j1.getPuntuacion());
-console.log("Puntuación J2: " + juego1.j2.getPuntuacion());
-console.log("Resultado: " + juego1.getScore());
-console.log("Ganador: " + juego1.ganador.getNombre());
-*/
-
-/* Version: Introduce quién marca hasta que uno gane. */
-/*
-let nom1:string = prompt("Jugador 1: "),
-    nom2:string = prompt("Jugador 2: "),
-    nombre1:string = "Jugador1",
-    nombre2:string = "Jugador2";
-
-if (nom1 != "") { nombre1 = nom1; }
-if (nom2 != "") { nombre2 = nom2; }  
-
-let juego1:Juego = new Juego(nombre1, nombre2);
-console.log(juego1.getScore());
-
-while (juego1.ganador == null) {
-    let gana:number = parseInt(prompt("Ha marcado jugador [1|2]: "));
-    if (gana == 1) {
+function anotarPunto(num:number) {
+    if (num == 1) {
         juego1.wonPoint(juego1.j1);
     }
-    else {
+    else if (num == 2) {
         juego1.wonPoint(juego1.j2);
     }
+    else {
+    }
 
-    console.log(juego1.getScore());
-    //document.getElementById("resul").innerHTML = juego1.getScore();
+    this.imprimirResultado();
 }
-*/
+
+function imprimirResultado() {
+    resultadoCadena += "<p>" + juego1.getScore() + "</p>";
+    document.getElementById("divResultados").innerHTML = resultadoCadena;
+
+    // Si ha ganado un jugador : se bloquean los botones
+    if (juego1.getScore().indexOf("Win") >= 0) {
+        // Esconder botones
+        document.getElementById("btnPlayer1").disabled = true;
+        document.getElementById("btnPlayer2").disabled = true;
+    }
+}
+
+function iniciar(accion:string) {
+    // variables con valores
+    var accion:string = accion,
+        lblJugador1:Element = document.getElementById("lblPlayer1"),
+        lblJugador2:Element = document.getElementById("lblPlayer2"),
+        txtJugador1:Element = document.getElementById("txtPlayer1"),
+        txtJugador2:Element = document.getElementById("txtPlayer2"),
+        btnPunto1:Element = document.getElementById("btnPlayer1"),
+        btnPunto2:Element = document.getElementById("btnPlayer2"),
+        nombre1:string = txtJugador1.value,
+        nombre2:string = txtJugador2.value;
+
+
+    if (accion == "jugar") {
+        
+        if (nombre1 == null || nombre1 == "") {
+            nombre1 = "Jugador1";
+        }
+        if (nombre2 == null || nombre2 == "") {
+            nombre2 = "Jugador2";
+        }
+        juego1 = new Juego(nombre1, nombre2)
+
+
+        // resetea el resultado y comienza desde cero (love-love)
+        resultadoCadena = "";
+        this.imprimirResultado();
+
+
+        // Poner nombres
+        lblJugador1.innerHTML = nombre1;
+        lblJugador2.innerHTML = nombre2;
+
+        // Mostrar botones
+        btnPunto1.classList.remove("display-none");
+        btnPunto2.classList.remove("display-none");
+
+        // Esconder cajas de texto
+        txtJugador1.value = "";
+        txtJugador2.value = "";
+        txtJugador1.classList.add("display-none");
+        txtJugador2.classList.add("display-none");
+        /*
+        txtJugador1.style = "display: none;";
+        txtJugador2.style = "display: none;";
+        */
+
+        // coultar botón Play y mostrar el botón New
+        document.getElementById("btnPlay").classList.add("display-none");
+        document.getElementById("btnNew").classList.remove("display-none");
+    }
+    else if (accion == "nuevo"){
+        // Poner titulos
+        lblJugador1.innerHTML = "Player 1";
+        lblJugador2.innerHTML = "Player 2";
+
+        // Esconder botones
+        btnPunto1.disabled = false;
+        btnPunto2.disabled = false;
+        btnPunto1.classList.add("display-none");
+        btnPunto2.classList.add("display-none");
+        /*btnPunto1.style = "display: none;";
+        btnPunto2.style = "display: none;";*/
+
+        // Mostrar cajas de texto
+        txtJugador1.classList.remove("display-none");
+        txtJugador2.classList.remove("display-none");
+
+        // Borrar resultados
+        document.getElementById("divResultados").innerHTML = "";
+
+        // coultar botón New y mostrar el botón Play
+        document.getElementById("btnNew").classList.add("display-none");
+        document.getElementById("btnPlay").classList.remove("display-none");
+    }
+}
+
+
 
 

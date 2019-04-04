@@ -1,5 +1,13 @@
 "use strict";
 exports.__esModule = true;
+src;
+"./app/juego.js";
+type = "text/javascript";
+charset = "utf-8" > /script>
+    < script;
+src = "./app/jugador.js";
+type = "text/javascript";
+charset = "utf-8" > /script>;
 var jugador_1 = require("../app/jugador");
 /*
  * Posée dos clases Jugador

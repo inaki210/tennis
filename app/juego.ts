@@ -1,4 +1,6 @@
 
+    <script src="./app/juego.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./app/jugador.js" type="text/javascript" charset="utf-8"></script>
 import { Jugador } from "../app/jugador";
 
 /* 

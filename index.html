@@ -5,79 +5,32 @@
     <title>Tennis</title>
     <link rel="stylesheet" href="estilos.scss">
 	<script src="juegoTennisCompleto.js" type="text/javascript" charset="utf-8"></script>
-    <!-- <script src="appTennis.js" type="text/javascript" charset="utf-8"></script> -->
-    <script>
-        var estaJugando = false;
-
-        function iniciar() {
-
-            var lblply1 = document.getElementById("lblPlayer1"),
-                pyr1 = document.getElementById("txtP1").value,
-                lblply2 = document.getElementById("lblPlayer2"),
-                pyr2 = document.getElementById("txtP2").value;
-
-            if (!estaJugando) {
-                
-                if (pyr1 == null || pyr1 == "") {
-                    pyr1 = "Jugador1";
-                }
-                if (pyr2 == null || pyr2 == "") {
-                    pyr2 = "Jugador2";
-                }
-
-                lblply1.innerHTML = pyr1;
-                lblply2.innerHTML = pyr2;
-
-                document.getElementById("txtP1").value = "";
-                document.getElementById("txtP2").value = "";
-                document.getElementById("btnPlayNew").value = "New Game";
-            }
-            else {
-                lblply1.innerHTML = "Player 1";
-                lblply2.innerHTML = "Player 2";
-
-
-
-
-                document.getElementById("btnPlayNew").value = "Play!";
-            }
-            
-            estaJugando = !estaJugando;
-        }
-
-    </script>
+    <!-- <script src="./app/main.js" type="text/javascript" charset="utf-8"></script> -->
 </head>
 <body class="cuerpo">
     <div class="container">
-        <div class="header">
+        <div class="display-flex-column--centrado">
             <h1>TENNIS GAME</h1>
         </div>
         <div class="main">
             <div class="jugadores">
-                <div class="PJ1">
+                <div class="Player1">
                     <h4 id="lblPlayer1">Player 1</h4>
-                    <input type="text" id="txtP1" size="8" />
-                    <input type="button" id="btnP1" value="Won point" />
+                    <input type="text" id="txtPlayer1" size="8" />
+                    <input type="button" id="btnPlayer1" class="display-none" value="Won point" onclick="anotarPunto(1)" />
                 </div>
-                <div class="resultados">
-                    <p>love All</p>
-                    <p>fiveteen - love</p>
-                    <p>fiveteen All</p>
-                    <p>thirty - fiveteen</p>
-                    <p>forty - thirty</p>
-                    <p>Deuce</p>
-                    <p>Ventaja Jugador1</p>
-                    <p>Win Jugador1!!!</p>
+                <div class="resultados" id="divResultados">
                 </div>
-                <div class="PJ2">
+                <div class="Player2">
                     <h4 id="lblPlayer2">Player 2</h4>
-                    <input type="text" id="txtP2" size="8" />
-                    <input type="button" id="btnP2" class="btn-won-point" value="Won point" />
+                    <input type="text" id="txtPlayer2" size="8" />
+                    <input type="button" id="btnPlayer2" class="display-none" value="Won point" onclick="anotarPunto(2)" />
                 </div>
             </div>
         </div>
-        <div class="footer">
-            <input type="button" id="btnPlayNew" value="Play!" onclick=iniciar() />
+        <div class="display-flex-row--centrado">
+            <input type="button" id="btnPlay" value="Play!" onclick="iniciar('jugar')" />
+            <input type="button" id="btnNew" class="display-none" value="New Game" onclick="iniciar('nuevo')" />
         </div>
 	</div>
 </body>
