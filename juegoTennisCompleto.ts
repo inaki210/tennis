@@ -171,9 +171,6 @@ class Jugador {
  * 
  */
 
- 
-//console.log("Comienza el partido:");
-// variables de elementos y estado
 let juego1:Juego = new Juego(null, null),
     resultadoCadena:string;
 
@@ -244,10 +241,6 @@ function iniciar(accion:string) {
         txtJugador2.value = "";
         txtJugador1.classList.add("display-none");
         txtJugador2.classList.add("display-none");
-        /*
-        txtJugador1.style = "display: none;";
-        txtJugador2.style = "display: none;";
-        */
 
         // coultar botón Play y mostrar el botón New
         document.getElementById("btnPlay").classList.add("display-none");
@@ -263,8 +256,6 @@ function iniciar(accion:string) {
         btnPunto2.disabled = false;
         btnPunto1.classList.add("display-none");
         btnPunto2.classList.add("display-none");
-        /*btnPunto1.style = "display: none;";
-        btnPunto2.style = "display: none;";*/
 
         // Mostrar cajas de texto
         txtJugador1.classList.remove("display-none");

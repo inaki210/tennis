@@ -7,29 +7,29 @@
 	<script src="juegoTennisCompleto.js" type="text/javascript" charset="utf-8"></script>
     <!-- <script src="./app/main.js" type="text/javascript" charset="utf-8"></script> -->
 </head>
-<body class="cuerpo">
-    <div class="container">
-        <div class="display-flex-column--centrado">
+<body id="cuerpo">
+    <div id="container" class="position-relative display-flex-column justify-content-center height-large color-fondo--azul-claro">
+        <div id="divHeader" class="display-flex-row--centrado">
             <h1>TENNIS GAME</h1>
         </div>
-        <div class="main">
-            <div class="jugadores">
-                <div class="Player1">
+        <div id="divMain">
+            <div id="divJugadores" class="display-flex-row justify-content-space-around margin-horizontal-small">
+                <div id="divPlayer1" class="display-flex-column--centrado">
                     <h4 id="lblPlayer1">Player 1</h4>
                     <input type="text" id="txtPlayer1" size="8" />
                     <input type="button" id="btnPlayer1" class="display-none" value="Won point" onclick="anotarPunto(1)" />
                 </div>
-                <div class="resultados" id="divResultados">
+                <div id="divResultados" class="display-flex-column--centrado">
                 </div>
-                <div class="Player2">
+                <div id="divPlayer2">
                     <h4 id="lblPlayer2">Player 2</h4>
                     <input type="text" id="txtPlayer2" size="8" />
                     <input type="button" id="btnPlayer2" class="display-none" value="Won point" onclick="anotarPunto(2)" />
                 </div>
             </div>
         </div>
-        <div class="display-flex-row--centrado">
-            <input type="button" id="btnPlay" value="Play!" onclick="iniciar('jugar')" />
+        <div id="divFooter" class="display-flex-row--centrado">
+            <input type="button" id="btnPlay" class="width-medium" value="Play!" onclick="iniciar('jugar')" />
             <input type="button" id="btnNew" class="display-none" value="New Game" onclick="iniciar('nuevo')" />
         </div>
 	</div>

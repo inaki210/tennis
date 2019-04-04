@@ -136,8 +136,6 @@ var Jugador = /** @class */ (function () {
  * Introduce los nómbres de los jugadores.
  *
  */
-//console.log("Comienza el partido:");
-// variables de elementos y estado
 var juego1 = new Juego(null, null), resultadoCadena;
 function anotarPunto(num) {
     if (num == 1) {
@@ -185,10 +183,6 @@ function iniciar(accion) {
         txtJugador2.value = "";
         txtJugador1.classList.add("display-none");
         txtJugador2.classList.add("display-none");
-        /*
-        txtJugador1.style = "display: none;";
-        txtJugador2.style = "display: none;";
-        */
         // coultar botón Play y mostrar el botón New
         document.getElementById("btnPlay").classList.add("display-none");
         document.getElementById("btnNew").classList.remove("display-none");
@@ -202,8 +196,6 @@ function iniciar(accion) {
         btnPunto2.disabled = false;
         btnPunto1.classList.add("display-none");
         btnPunto2.classList.add("display-none");
-        /*btnPunto1.style = "display: none;";
-        btnPunto2.style = "display: none;";*/
         // Mostrar cajas de texto
         txtJugador1.classList.remove("display-none");
         txtJugador2.classList.remove("display-none");

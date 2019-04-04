@@ -7,7 +7,56 @@
 
 }
 
-/*  styles  */
+/*  --- estilos ---  */
+
+/*  Colores  */
+
+.color-fondo--azul-claro {
+    background-color: rgb(216, 235, 240);
+}
+
+
+/*  Tamaños  */
+
+.width-medium {
+    width: 6rem;
+}
+
+.height-large {
+    height: 30rem;
+}
+
+
+/*  Positions  */
+
+.position-relative {
+    position: relative;
+}
+
+
+/*  Margins  */
+
+.margin-horizontal-small {
+    margin: 2rem 0;
+}
+
+
+/*  Alineaciones  */
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-space-around {
+    justify-content: space-around;
+}
+
+/*  Displays  */
+
+
+.display-none {
+    display: none;
+}
 
 .display-flex-row {
     display: flex;
@@ -30,62 +79,8 @@
 }
 
 
-
-
-.container {
-    position: relative;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-    height: 30rem;
-
-    background-color: rgb(216, 235, 240);
-}
-
-.header {
-    
-}
-
-.jugadores {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-
-    margin: 2rem 0;
-}
-
-.resultados {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-#btnPlay {
-    width: 6rem;
-}
-
-.Player1, .Player2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.display-none {
-    display: none;
-}
-
-
-
-/* Colores para distinguir las cajas */
+/* Colores para distinguir las cajas *//*
 div {
     background-color: rgba(255, 0, 0, 0.05);
-}
+}*/
 
